@@ -1,0 +1,239 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('images/background.jpg');
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
+/*container*/
+.container{
+    border-radius: 30px;
+     display: flex;
+    flex-wrap: wrap;
+  width: 600px;
+ height: 600px;
+    gap: 80px;
+    margin: 20px auto;
+    position: relative;
+}
+.box{
+    flex: 1 1 calc(50% - 40px); 
+    height: calc((100% - 80px) / 2);
+    background-position: center;
+    background-size: cover;
+  border-radius: 20px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
+    transition: transform .25s ease;
+
+}
+
+/*square1*/
+.square1{
+    background-image: url('images/wednesdaycoffin.png');
+    border-radius: 20px;
+    background-position:center;
+    background-size: cover;
+}
+.square1:before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url('images/wednesdaycoffincover.png');
+    background-position:center;
+    background-size: cover;
+    z-index: 5; /* <-- Make this higher than all others */
+}
+.square1:hover:before{
+    animation: moveCover 3s ease-in-out forwards;
+}
+@keyframes moveCover{
+    0%{
+        transform: translateY(0) rotate(0);
+    }
+    60%{
+        transform: translateY(0%) rotate(-30deg);
+        transform-origin: bottom center;
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(0) rotate(-120deg)scale(20);
+        transform-origin:center;
+        opacity: 0;
+    }
+}
+.square1>img{
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+    position: relative;
+    opacity: 0;
+   
+}
+.square1:hover>img{ animation:moveImage1 4s ease-in-out forwards;
+    animation-delay: 3s;
+}
+@keyframes moveImage1{
+    0%{
+        transform:scale(1);
+        opacity: 0;
+    }
+    50%{transform:scale(1.5) translateY(-5%);
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+/*square2*/
+.square2{
+    background-image: url('images/thinghand.png');
+    border-radius: 20px;
+    background-position:center;
+    background-size: cover;
+}
+.square2:before{
+    content: '';
+    position: absolute;
+    top:-2%;
+    left: -2%;
+    height: 105%;
+    width: 105%;
+    background-image: url('images/thingboxcover.png');
+    background-position:center;
+    background-size: cover;
+    z-index: 4;
+}
+.square2:hover:before{
+    animation: moveBox 3s ease-in-out forwards;
+}
+@keyframes moveBox{
+    0%{
+        transform: translateY(0) rotate(0);
+        opacity: 1;
+    }
+    100%{
+        transform: rotate(250deg);
+        transform-origin: 85% 85%;
+    }
+}
+.square2>img{
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+    position: relative;
+    opacity: 0;
+   
+}
+.square2:hover>img{ animation:moveImage2 4s ease-in-out forwards;
+    animation-delay: 3s;
+}
+@keyframes moveImage2{
+    0%{
+        transform:scale(1);
+        opacity: 1;
+    }
+    50%{
+        transform:scale(1.5) translateY(-7%);
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+/*square3*/
+.square3{
+    background-image: url('images/enid.png');
+    border-radius: 20px;
+    background-position:center;
+    background-size: cover;
+    z-index: 2;
+}
+.square3:before{
+    content: '';
+    position: absolute;
+    top:-2%;
+    left: -2%;
+    height: 105%;
+    width: 105%;
+    background-image: url('images/eniddoor.png');
+    background-position:center;
+    background-size: cover;
+    z-index: 4;
+}
+.square3:hover:before{
+    animation: openDoor 3s ease-in-out forwards;
+}
+@keyframes openDoor{
+    0%{
+        transform: translateY(0) rotate(0);
+        opacity: 1;
+    }
+    100%{
+        transform: rotateY(80deg);
+        transform-origin: 85% 50%;
+        opacity: 1;
+    }
+}
+.square4{
+    background-image: url('images/hyde.png');
+    border-radius: 20px;
+    background-position:center;
+    background-size: cover;
+}
+.square4:before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    background-image: url('images/Hydeprison.png');
+    background-position:center;
+    background-size: cover;
+    z-index: 4;
+}
+.square4:hover:before{
+    animation: movehyde 3s ease-in-out forwards;
+    animation-delay: 3s;
+}
+@keyframes movehyde{
+    0%{
+        transform: translateY(0) rotate(0);
+        opacity: 1;
+    }
+    100%{opacity: 0;
+    }
+}
+.square4>img{
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+    position: relative;
+    opacity: 0;
+   
+}
+.square4:hover>img{ animation:moveImage3 6s ease-in-out forwards;
+}
+@keyframes moveImage3{
+    0%{}
+    25%{
+        transform:scale(1.5) translateY(-7%);
+        opacity: 1;
+    }
+    50%{
+        transform:scale(1) translateY(0%);
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
